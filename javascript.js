@@ -1,8 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
-
-
 
 let getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3);
@@ -25,6 +20,17 @@ let getHumanChoice = () => {
     choice = choice.toLowerCase();
     return choice;
 }
+
+
+let playGame = () => {
+
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+
 
 let playRound  = (humanChoice, computerChoice) => {
   if(humanChoice === "rock" && computerChoice === "paper"){
@@ -50,8 +56,20 @@ let playRound  = (humanChoice, computerChoice) => {
   }
 } 
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+for(let i=0; i<5; i++){
+    playRound(getHumanChoice(), getComputerChoice());
+}
 
-playRound(humanSelection, computerSelection);
+if(humanScore > computerScore){
+    console.log("Human Win " + humanScore + " is to "  +computerScore)
+} else if(humanScore < computerScore){
+    console.log("Computer Win " + computerScore + " is to "  +humanScore)
+} else {
+    console.log("Draw " + humanScore + " is to "  +computerScore)
+}
+ 
+}
+
+
+playGame();
 
