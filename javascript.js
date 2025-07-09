@@ -14,4 +14,7 @@ let getComputerChoice = () => {
 }
 
 
-console.log(getComputerChoice());
+let getHumanChoice = () =>{
+    let choice = prompt("Enter your choice! ");
+    return choice;
+}
